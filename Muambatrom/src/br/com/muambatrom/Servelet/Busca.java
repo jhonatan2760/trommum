@@ -31,8 +31,11 @@ public class Busca extends HttpServlet {
 		MercadoLivreBean ml = new MercadoLivreBean(request.getParameter("key"));
 		StringBuilder json = new StringBuilder();
 		
-		json.append("{	"+request.getParameter("key")+" mercadoLivre : "+ml.getQuantidade()+"}");
-		response.getWriter().append(ml.getPesquisa().toString());
+		for(ResultadoBean pesq : ml.getPesquisa()){
+			json.append("<img class='redonda' src='"+pesq.getImg()+"'/>");
+		}
+		
+		response.getWriter().append(json);
 		
 	}
 

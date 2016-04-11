@@ -34,9 +34,14 @@
 </body>
 <script type='text/javascript'>
 	jQuery('#enhancedText').change(function(event){
+		jQuery(this).css('background-image',"url('../media/image/load.gif')");
+		
 		jQuery.get('../Busca',{key : jQuery(this).val()},function(data){
 			console.log(data);
+			jQuery('#resultado').append(data).fadeIn(3000);
 		});
+		
+		jQuery(this).css('background-image',"url('../media/image/lupa.png')");
 	});
 </script>
 </html>

@@ -38,3 +38,15 @@ label{
 	margin-left : 20%;
 	margin-top : 5%;
 }
+#resultado{
+	margin-top : 2%;
+}
+.redonda{
+	border-radius : 10px;
+	margin : 10px;
+}
+.redonda:hover{
+	box-shaddow : orange 10px 10px 10px;
+	box-shadow: orange 10px 10px 9px;
+	cursor : pointer;
+}
