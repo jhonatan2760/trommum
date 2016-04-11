@@ -30,11 +30,9 @@ public class Busca extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MercadoLivreBean ml = new MercadoLivreBean(request.getParameter("key"));
 		StringBuilder json = new StringBuilder();
-		ml.getPesquisa();
+		
 		json.append("{	"+request.getParameter("key")+" mercadoLivre : "+ml.getQuantidade()+"}");
-		
-		
-		response.getWriter().append(json);
+		response.getWriter().append(ml.getPesquisa().toString());
 		
 	}
 

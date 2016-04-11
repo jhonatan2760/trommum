@@ -38,15 +38,16 @@ public class MercadoLivreBean extends Pesquisa implements SearchEngine{
         	resul = new ResultadoBean();
             System.out.println(el.text());
             resul.setNome(el.text());
+            resul.setImg(el.select(".rowItem img").attr("src"));
             resultados.add(resul);
         }
         
-        elementos = doc.select(".rowItem img");
-        
-        for(Element el2 : elementos){
-        	System.out.println(el2.attr("src"));
-        	resul.setImg(el2.attr("src"));
-        }
+//        elementos = doc.select(".rowItem img");
+//        
+//        for(Element el2 : elementos){
+//        	System.out.println(el2.attr("src"));
+//        	resul.setImg(el2.attr("src"));
+//        }
 		
         this.quantidade = resultados.size();
 		return resultados;
