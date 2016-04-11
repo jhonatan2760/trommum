@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -29,7 +28,7 @@ public class MercadoLivreBean extends Pesquisa implements SearchEngine{
 	public List<ResultadoBean> getPesquisa() throws IOException {
 		resultados = new ArrayList<>();
 		
-		Document doc = Jsoup.connect("http://lista.mercadolivre.com.br/"+this.getKey().replaceAll(" ", "-")+"#D[A:"+this.getKey()+"]").userAgent("gecko/mozilla").get();
+		Document doc = this.getDocument("http://lista.mercadolivre.com.br/"+this.getKey().replaceAll(" ", "-")+"#D[A:"+this.getKey()+"]");
 		ResultadoBean resul = null;
 		
 		Elements elementos = doc.select(".article");

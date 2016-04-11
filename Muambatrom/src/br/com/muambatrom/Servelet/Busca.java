@@ -1,6 +1,8 @@
 package br.com.muambatrom.Servelet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -8,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.muambatrom.Beans.MercadoLivreBean;
+import br.com.muambatrom.Beans.OlxBean;
 import br.com.muambatrom.Beans.ResultadoBean;
+import br.com.muambatrom.Engine.SearchEngine;
 
 /**
  * Servlet implementation class Busca
@@ -28,11 +32,15 @@ public class Busca extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		MercadoLivreBean ml = new MercadoLivreBean(request.getParameter("key"));
 		StringBuilder json = new StringBuilder();
+		List<SearchEngine> listaPesquisa = new ArrayList<>();
+		listaPesquisa.add(new MercadoLivreBean(request.getParameter("key")));
+		listaPesquisa.add(new OlxBean(request.getParameter("key")));
 		
-		for(ResultadoBean pesq : ml.getPesquisa()){
-			json.append("<img class='redonda' src='"+pesq.getImg()+"'/>");
+		for(SearchEngine pesquisa : listaPesquisa){
+			for(ResultadoBean resultado : (ArrayList<ResultadoBean>) pesquisa.getPesquisa()){
+				json.append("<img class='redonda' src='"+resultado.getImg()+"'/>");
+			}
 		}
 		
 		response.getWriter().append(json);

@@ -43,5 +43,9 @@
 		
 		jQuery(this).css('background-image',"url('../media/image/lupa.png')");
 	});
+	
+	jQuery('img').error(function(event){
+		jQuery(this).css('background','red');
+	});
 </script>
 </html>
