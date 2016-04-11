@@ -1,0 +1,40 @@
+@CHARSET "ISO-8859-1";
+
+#bodyMain{
+	background : black;
+}
+#containerMainLogo{
+	text-align  : center;
+	margin-top : 10%;
+}
+.width10{
+	width : 10%;
+}
+.name{
+	color : white;
+}
+#enhancedText{
+	width : 80%;
+	background-image : url('../media/image/lupa.png');
+	background-repeat: no-repeat;
+	background-position: right;
+}
+#caixaBusca{
+	text-align : center;
+	margin-left : 20%;
+}
+#rodape{
+	margin-top : 29%;
+	color : white;
+	text-align : center;
+}
+#cadastro > form input[type=text]{
+	width : 10%;
+}
+label{
+	color : white;
+}
+#cadastro{
+	margin-left : 20%;
+	margin-top : 5%;
+}
