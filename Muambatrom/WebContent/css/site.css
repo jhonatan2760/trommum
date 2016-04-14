@@ -50,3 +50,25 @@ label{
 	box-shadow: orange 10px 10px 9px;
 	cursor : pointer;
 }
+#resultado{
+	text-align : center;
+	opacity: 0.3;
+}
+#lista{
+	list-style  : none;
+}
+.whiteBoxContent{
+	background : white;
+	width : 70%;
+	margin-top : 5px;
+	background-image : url('../media/image/search.png');
+	background-repeat : no-repeat;
+	background-position: left;
+	border-radius : 10px;
+	text-align : center;
+}
+
+#lista > li{
+	display : visible;
+}
+

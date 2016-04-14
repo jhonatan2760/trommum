@@ -20,7 +20,27 @@
 			</span>
 		</div>
 		<div id='caixaBusca'>
-			<input id='enhancedText' type='text' class='form-control'>
+			<ul id='lista' >
+				<li class='searcher' >
+					<input id='enhancedText' type='text' class='form-control'>
+				</li>
+				<li>
+					<div class='whiteBoxContent resultadoListaML' >
+						<span>Oi</span>
+					</div>
+				</li>
+				<li>
+					<div class='whiteBoxContent resultadoListaOlx' >
+						<span>Oi</span>
+					</div>
+				</li>
+				<li>
+					<div class='whiteBoxContent resultadoListaOutro' >
+						<span>Oi</span>
+					</div>
+				</li>
+			</ul>
+			
 		</div>
 		<div id='resultado'>
 		</div>
