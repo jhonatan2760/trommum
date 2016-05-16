@@ -20,26 +20,7 @@
 			</span>
 		</div>
 		<div id='caixaBusca'>
-			<ul id='lista' >
-				<li class='searcher' >
 					<input id='enhancedText' type='text' class='form-control'>
-				</li>
-				<li>
-					<div class='whiteBoxContent resultadoListaML' >
-						<span>Oi</span>
-					</div>
-				</li>
-				<li>
-					<div class='whiteBoxContent resultadoListaOlx' >
-						<span>Oi</span>
-					</div>
-				</li>
-				<li>
-					<div class='whiteBoxContent resultadoListaOutro' >
-						<span>Oi</span>
-					</div>
-				</li>
-			</ul>
 			
 		</div>
 		<div id='resultado'>
@@ -65,6 +46,7 @@
 	});
 	
 	jQuery('img').error(function(event){
+		jQuery(this).remove();
 		jQuery(this).css('background','red');
 	});
 </script>

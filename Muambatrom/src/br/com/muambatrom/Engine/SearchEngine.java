@@ -9,5 +9,7 @@ public interface SearchEngine {
 	long getQuantidade();
 	List<?> getPesquisa() throws IOException;
 	boolean haveResultado();
-	
+	boolean persistSearch(SearchEngine engine);
+	String getSearchKey();
+	String getSourceName();
 }

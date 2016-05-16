@@ -8,6 +8,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import br.com.muambatrom.Dao.PesquisaDao;
 import br.com.muambatrom.Engine.SearchEngine;
 
 public class OlxBean extends Pesquisa implements SearchEngine {
@@ -40,6 +41,9 @@ public class OlxBean extends Pesquisa implements SearchEngine {
 		
 		this.quantidade = lista.size();
 		
+		 PesquisaDao pesquisa = new PesquisaDao(this);
+	     pesquisa.save();
+	        
 		return lista;
 	}
 
@@ -48,4 +52,20 @@ public class OlxBean extends Pesquisa implements SearchEngine {
 		return false;
 	}
 
+	@Override
+	public boolean persistSearch(SearchEngine engine) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	
+	public String getSearchKey(){
+		return this.getKey();
+	}
+
+	@Override
+	public String getSourceName() {
+		return "OLX";
+	}
 }
