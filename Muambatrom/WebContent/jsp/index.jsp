@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Muambatrom -- Comprar barato é nosso lema</title>
+<title>Muambatrom -- Sistema de buscas integradas</title>
 <link  rel='stylesheet' href='../bootstrap/bootstrap-theme.min.css'></link>
 <link  rel='stylesheet' href='../bootstrap/bootstrap.min.css'></link>
 <link  rel='stylesheet' href='../css/site.css'></link>
@@ -44,6 +44,10 @@
 		
 		jQuery(this).css('background-image',"url('../media/image/lupa.png')");
 	});
+	
+// 	jQuery('#enhacedText').keypress(function(event){
+// 		jQuery(this).css('background-image',"url('../media/image/loader.gif')");	
+// 	});
 	
 	jQuery('img').error(function(event){
 		jQuery(this).remove();
