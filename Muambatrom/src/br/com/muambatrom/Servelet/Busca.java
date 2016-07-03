@@ -39,7 +39,7 @@ public class Busca extends HttpServlet {
 		
 		for(SearchEngine pesquisa : listaPesquisa){
 			for(ResultadoBean resultado : (ArrayList<ResultadoBean>) pesquisa.getPesquisa()){
-				json.append("<img class='redonda' src='"+resultado.getImg()+"'/>");
+				json.append("<img class='img-rounded img-raised' src='"+resultado.getImg()+"'/>");
 			}
 		}
 		

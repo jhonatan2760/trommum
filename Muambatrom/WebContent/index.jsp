@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!doctype html>
-<html lang="en">
 <head>
 	<meta charset="utf-8" />
 	<link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon.png">
@@ -25,6 +24,12 @@
 			background-color : black!important;
 		}
 	</style>
+	
+	<style media="screen and (max-width : 480px)">
+		#logon{
+			width : 15%!important;
+		}
+	</style>
 </head>
 
 <body class="signup-page">
@@ -43,7 +48,7 @@
 	    	<a href="http://www.creative-tim.com">
 	        	<div class="logo-container">
 	                <div class="logo">
-	                    <img style='width : 49%;' src="media/image/logo_med.png" alt="Comprar barato é o nosso lema" rel="tooltip" title="" data-placement="bottom" data-html="true" data-original-title="<b>Muambatrom</b>">
+	                    <img id='logon' style='width : 49%;' src="media/image/logo_med.png" alt="Comprar barato é o nosso lema" rel="tooltip" title="" data-placement="bottom" data-html="true" data-original-title="<b>Muambatrom</b>">
 	                </div>
 	                <div class="brand" style='color : white'>
 	                    Muambatrom
@@ -94,8 +99,8 @@
 			<div class="section section-basic">
 				<div class="col-sm-6">
 					<div class="form-group">
-						<input type="text" value="" placeholder="Pesquisar" class="form-control" />
-						<button class="btn btn-raised btn-success">Pesquisar<div class="ripple-container"></div></button>
+						<input id='pesquisar' type="text" value="" placeholder="Pesquisar" class="form-control" />
+						<button id='buscar' class="btn btn-raised btn-success">Pesquisar<div class="ripple-container"></div></button>
 					</div>
 				</div>
 			</div>
@@ -135,9 +140,9 @@
 								<div class="tab-content text-center">
 									<div class="tab-pane active" id="profile">
 										<div class='wrapper'>
-											<div class="col-sm-2 col-sm-offset-1">
-												<h4>Mulher Loira Exemplo</h4>
-													<img src="media/image/avatar.jpg" alt="Raised Image" class="img-rounded img-responsive img-raised">
+											<div id='resultado'>
+<!-- 												<h4>Mulher Loira Exemplo</h4> -->
+<!-- 													<img src="media/image/avatar.jpg" alt="" class="img-rounded img-responsive img-raised"> -->
 											</div>
 										</div>
 									</div>
@@ -152,43 +157,47 @@
 						</div>
 		</div>
 	</div> 
-	
    </div>
-   
-
 </body>
 	<!--   Core JS Files   -->
-	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/jquery-2.2.3.min.js" type="text/javascript"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/material.min.js"></script>
-
 	<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
 	<script src="js/nouislider.min.js" type="text/javascript"></script>
-
 	<!--  Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
 	<script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
-
 	<!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
 	<script src="js/material-kit.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
-		$().ready(function(){
-			// the body of this function is in material-kit.js
+		jQuery(document).ready(function(event){
 			materialKit.initSliders();
 			$(window).on('scroll', materialKit.checkScrollForTransparentNavbar);
-
             window_width = $(window).width();
 
             if (window_width >= 768){
                 big_image = $('.wrapper > .header');
-
 				$(window).on('scroll', materialKitDemo.checkScrollForParallax);
 			}
-
+            
+            jQuery('.btn').on('click',function(event){
+            	jQuery.get('Busca',{key : jQuery('#pesquisar').val()},function(data){
+	        		console.log(data);
+	        		jQuery('#resultado').append(data).fadeIn(3000);
+	        	});
+            });
+            
+	       	jQuery('img').error(function(event){
+	        		jQuery(this).remove();
+	        		jQuery(this).css('background','red');
+	        });
+	       	
 		});
+         
+         jQuery('#buscar').on('click',function(event){
+	        	jQuery.get('Busca',{key : jQuery('#pesquisar').val()},function(data){
+	        		jQuery('#resultado').append(data).fadeIn(3000);
+	        	});
+         });
 	</script>
-
-
-
-
-</html>
