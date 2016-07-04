@@ -15,7 +15,7 @@ public class MercadoLivreBean extends Pesquisa implements SearchEngine{
 
 	private List<ResultadoBean> resultados;
 	private long quantidade; 
-	
+	private	boolean haveResult = false;
 	public MercadoLivreBean(String key){
 		super(key);
 	}
@@ -28,7 +28,6 @@ public class MercadoLivreBean extends Pesquisa implements SearchEngine{
 	@Override
 	public List<ResultadoBean> getPesquisa() throws IOException {
 		resultados = new ArrayList<>();
-		
 		Document doc = this.getDocument("http://lista.mercadolivre.com.br/"+this.getKey().replaceAll(" ", "-")+"#D[A:"+this.getKey()+"]");
 		ResultadoBean resul = null;
 		
@@ -44,7 +43,11 @@ public class MercadoLivreBean extends Pesquisa implements SearchEngine{
         	System.out.println(el.select("img").attr("src"));
             resul.setNome(el.select("h2").text());
             resul.setImg(el.select("img").attr("src"));
+            System.out.println(el.text());
+            resul.setValor(el.select(".ch-price").get(0).text());
+            System.out.println(el.select(".ch-price").get(0).text());
             resultados.add(resul);
+            haveResult = true;
         }
         
         this.quantidade = resultados.size();
@@ -56,12 +59,11 @@ public class MercadoLivreBean extends Pesquisa implements SearchEngine{
 
 	@Override
 	public boolean haveResultado() {
-		return false;
+		return this.haveResult;
 	}
 
 	@Override
 	public boolean persistSearch(SearchEngine engine) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	
@@ -74,5 +76,14 @@ public class MercadoLivreBean extends Pesquisa implements SearchEngine{
 	@Override
 	public String getSourceName() {
 		return "Mercado Livre";
+	}
+	
+	public static void main (String [] args){
+		MercadoLivreBean b = new MercadoLivreBean("PS4");
+		try {
+			b.getPesquisa();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }

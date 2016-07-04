@@ -1,10 +1,6 @@
 package br.com.muambatrom.Dao;
 
-import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import com.mysql.jdbc.Connection;
 
 import br.com.muambatrom.Data.Databasehandler;
 import br.com.muambatrom.Engine.Persistent;
@@ -20,7 +16,6 @@ public class PesquisaDao implements Persistent {
 
 	@Override
 	public boolean save() {
-		Databasehandler data = new Databasehandler();
 		java.sql.Connection conn = null;
 	try{
 		conn = Databasehandler.getConnection();
@@ -29,8 +24,7 @@ public class PesquisaDao implements Persistent {
 		ex.printStackTrace();
 	}finally{
 	}
-		
-				return false;
+		return false;
 	}
 	
 	

@@ -21,7 +21,6 @@
 		</div>
 		<div id='caixaBusca'>
 					<input id='enhancedText' type='text' class='form-control'>
-			
 		</div>
 		<div id='resultado'>
 		</div>
@@ -35,14 +34,15 @@
 </body>
 <script type='text/javascript'>
 	jQuery('#enhancedText').change(function(event){
-		jQuery(this).css('background-image',"url('../media/image/load.gif')");
+		jQuery(this).css('background-image',"url('../media/image/loader.gif')");
 		
 		jQuery.get('../Busca',{key : jQuery(this).val()},function(data){
 			console.log(data);
 			jQuery('#resultado').append(data).fadeIn(3000);
+		},function(data, stats, jq){
+			jQuery(this).css('background-image',"url('../media/image/lupa.png')");
 		});
 		
-		jQuery(this).css('background-image',"url('../media/image/lupa.png')");
 	});
 	
 // 	jQuery('#enhacedText').keypress(function(event){
