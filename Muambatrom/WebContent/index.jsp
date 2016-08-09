@@ -158,6 +158,10 @@
 		</div>
 	</div> 
    </div>
+   <div id="dialog" title=":(">
+  		<p>Estamos normalizando o acesso do sistema no Brasil, por favor, tenha paciência.</p>
+	</div>
+   
 </body>
 	<!--   Core JS Files   -->
 	<script src="js/jquery-2.2.3.min.js" type="text/javascript"></script>
@@ -169,9 +173,14 @@
 	<script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
 	<!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
 	<script src="js/material-kit.js" type="text/javascript"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 
 	<script type="text/javascript">
 		jQuery(document).ready(function(event){
+	       	$( "#dialog" ).dialog();
 			materialKit.initSliders();
 			$(window).on('scroll', materialKit.checkScrollForTransparentNavbar);
             window_width = $(window).width();
@@ -189,8 +198,8 @@
             });
             
 	       	jQuery('img').error(function(event){
-	        		jQuery(this).remove();
-	        		jQuery(this).css('background','red');
+	        	jQuery(this).remove();
+	        	jQuery(this).css('background','red');
 	        });
 	       	
 		});
