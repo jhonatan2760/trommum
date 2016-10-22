@@ -1,212 +1,129 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!doctype html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="utf-8" />
-	<link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon.png">
-	<link rel="icon" type="image/png" href="img/favicon.png">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://simbyone.com/wp-content/uploads/2014/04/3455e6f65c33232a060c28829a49b1cb.png">
+<title>Muambatrom</title>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<style>
+#loading{
+	background-color: black;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	margin-top: 0px;
+	top: 0px;
+}
+#loading-center{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	}
+#loading-center-absolute {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 100px;
+	width: 40px;
+	margin-top: -50px;
+	margin-left: -20px;
+}
+.object{
+	width: 40px;
+	height: 8px;
+	margin-bottom:20px;
+	background-color: #FFF;
+	-webkit-animation: animate 0.8s infinite;
+	animation: animate 0.8s infinite;
+	}
 
-	<title>Muambatrom</title>
 
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+#object_two { 
+	-webkit-animation-delay: 0.2s; 
+    animation-delay: 0.2s;
 
-	<!--     Fonts and icons     -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+	}
+#object_three {	
+	-webkit-animation-delay: 0.4s; 
+    animation-delay: 0.4s; 
+	}
 
-	<!-- CSS Files -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/material-kit.css" rel="stylesheet"/>
-	<style>
-		body > nav > div > nav {
-			background-color : black!important;
-		}
-	</style>
-	
-	<style media="screen and (max-width : 480px)">
-		#logon{
-			width : 15%!important;
-		}
-	</style>
+
+
+
+
+@-webkit-keyframes animate {
+ 
+  50% {
+	-ms-transform: scale(1.5); 
+   	-webkit-transform: scale(1.5);   
+    transform: scale(1.5);  
+	  }
+	  
+
+
+}
+
+@keyframes animate {
+  50% {
+	-ms-transform: scale(1.5); 
+   	-webkit-transform: scale(1.5);   
+    transform: scale(1.5);  
+	  }
+
+  
+}
+
+body{
+
+background : black;
+
+}
+
+
+</style>
 </head>
+<body>
+<div id="loading">
+<div id="loading-center">
+<div id="loading-center-absolute">
+<div class="object" id="object_one"></div>
+<div class="object" id="object_two"></div>
+<div class="object" id="object_three"></div>
 
-<body class="signup-page">
-	<nav  class="navbar navbar-transparent navbar-absolute" >
-    	<div class="container">
-        	<!-- Brand and toggle get grouped for better mobile display -->
-        	<nav class="navbar navbar-fixed-top navbar-color-on-scroll">
-	<div class="container">
-        <div class="navbar-header" >
-	    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
-	        	<span class="sr-only">Toggle navigation</span>
-	        	<span class="icon-bar"></span>
-	        	<span class="icon-bar"></span>
-	        	<span class="icon-bar"></span>
-	    	</button>
-	    	<a href="http://www.creative-tim.com">
-	        	<div class="logo-container">
-	                <div class="logo">
-	                    <img id='logon' style='width : 49%;' src="media/image/logo_med.png" alt="Comprar barato é o nosso lema" rel="tooltip" title="" data-placement="bottom" data-html="true" data-original-title="<b>Muambatrom</b>">
-	                </div>
-	                <div class="brand" style='color : white'>
-	                    Muambatrom
-	                </div>
-				</div>
-	      	</a>
-	    </div>
+
 </div>
-</nav>
-	    <div class="collapse navbar-collapse" id="navigation-index">
-	    	<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="components-documentation.html" class="btn" target="_blank">
-						<i class="material-icons">dashboard</i> Components
-					</a>
-				</li>
-				<li>
-					<a href="http://www.creative-tim.com/product/material-kit" target="_blank" class="btn">
-						<i class="material-icons">cloud_download</i> Download Desktop Client
-					</a>
-				</li>
-				<li>
-					<a rel="tooltip" title="" data-placement="bottom" href="#" target="_blank" class="btn btn-simple" data-original-title="Follow us on Twitter">
-						<i class="fa fa-twitter"></i>
-					</a>
-				</li>
-				<li>
-					<a rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/muambatrom/" target="_blank" class="btn btn-simple" data-original-title="Like us on Facebook">
-						<i class="fa fa-facebook-square"></i>
-					</a>
-				</li>
-				<li>
-					<a rel="tooltip" title="" data-placement="bottom" href="#" target="_blank" class="btn btn-simple" data-original-title="Follow us on Instagram">
-						<i class="fa fa-instagram"></i>
-					</a>
-				</li>
+</div>
+ 
+</div>
 
-	    	</ul>
-	    </div>
-	</div>
-</nav>       
-<div class="wrapper">
-	<div class="header header-filter" style="transform: translate3d(0px, 66.6667px, 0px); background-image: url('https://images.unsplash.com/photo-1423655156442-ccc11daa4e99?crop=entropy&dpr=2&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1450');">
-		<div class="container">
-			<div class="main main-raised">
-			<div>
-			</div>
-			<div class="section section-basic">
-				<div class="col-sm-6">
-					<div class="form-group">
-						<input id='pesquisar' type="text" value="" placeholder="Pesquisar" class="form-control" />
-						<button id='buscar' class="btn btn-raised btn-success">Pesquisar<div class="ripple-container"></div></button>
-					</div>
-				</div>
-			</div>
-		</div>	
-		</div>
-		<div class='container'>
-			<div class="card card-nav-tabs" >
-							<div class="header header-success" style='background : black'>
-								<!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
-								<div class="nav-tabs-navigation">
-									<div class="nav-tabs-wrapper">
-										<ul class="nav nav-tabs" data-tabs="tabs">
-											<li class="active">
-												<a href="#profile" data-toggle="tab">
-													<i class="material-icons">search</i>
-													Produtos Encontrados
-												</a>
-											</li>
-											<li>
-												<a href="#messages" data-toggle="tab">
-													<i class="material-icons">chat</i>
-													Dicas dos usuários que buscaram esse produto
-												</a>
-											</li>
-											<li>
-												<a href="#settings" data-toggle="tab">
-													<i class="material-icons">build</i>
-													Filtros de busca
-												</a>
 
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="content">
-								<div class="tab-content text-center">
-									<div class="tab-pane active" id="profile">
-										<div class='wrapper'>
-											<div id='resultado'>
-<!-- 												<h4>Mulher Loira Exemplo</h4> -->
-<!-- 													<img src="media/image/avatar.jpg" alt="" class="img-rounded img-responsive img-raised"> -->
-											</div>
-										</div>
-									</div>
-									<div class="tab-pane" id="messages">
-										<p> Em construção</p>
-									</div>
-									<div class="tab-pane" id="settings">
-										<p>Em construção</p>
-									</div>
-								</div>
-							</div>
-						</div>
-		</div>
-	</div> 
-   </div>
-   <div id="dialog" title=":(">
-  		<p>Estamos normalizando o acesso do sistema no Brasil, por favor, tenha paciência.</p>
-	</div>
-   
+<div id="header">
+<div id="header-left">
+
+</div>
+
+<div id="header-right">
+</div>
+</div>
+
+<div id="wrapper">
+<div id="wrapper-center">
+</div>
+<div class="wrapper-center-title">Muambatrom..</div>
+<div class="wrapper-center-content">
+</div>
+</div>
 </body>
-	<!--   Core JS Files   -->
-	<script src="js/jquery-2.2.3.min.js" type="text/javascript"></script>
-	<script src="js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="js/material.min.js"></script>
-	<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-	<script src="js/nouislider.min.js" type="text/javascript"></script>
-	<!--  Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
-	<script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
-	<!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
-	<script src="js/material-kit.js" type="text/javascript"></script>
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+</html>
+<script type='text/javascript'>
 
-	<script type="text/javascript">
-		jQuery(document).ready(function(event){
-	       	$( "#dialog" ).dialog();
-			materialKit.initSliders();
-			$(window).on('scroll', materialKit.checkScrollForTransparentNavbar);
-            window_width = $(window).width();
+	setTimeout(function(event){
+		window.location.href = 'start.jsp';
+	}, 3000);
 
-            if (window_width >= 768){
-                big_image = $('.wrapper > .header');
-				$(window).on('scroll', materialKitDemo.checkScrollForParallax);
-			}
-            
-            jQuery('.btn').on('click',function(event){
-            	jQuery.get('Busca',{key : jQuery('#pesquisar').val()},function(data){
-	        		console.log(data);
-	        		jQuery('#resultado').append(data).fadeIn(3000);
-	        	});
-            });
-            
-	       	jQuery('img').error(function(event){
-	        	jQuery(this).remove();
-	        	jQuery(this).css('background','red');
-	        });
-	       	
-		});
-         
-         jQuery('#buscar').on('click',function(event){
-	        	jQuery.get('Busca',{key : jQuery('#pesquisar').val()},function(data){
-	        		jQuery('#resultado').append(data).fadeIn(3000);
-	        	});
-         });
-	</script>
+</script>
